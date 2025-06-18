@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlavorTown - Eat Fresh, Live Better</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fdf6f0;
+    }
+    header {
+      background-color: #43a047;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    nav {
+      background: #2e7d32;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .hero {
+      background: url('https://img.freepik.com/free-photo/indian-food-plate_23-2148747714.jpg') no-repeat center center;
+      background-size: cover;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+      text-shadow: 2px 2px 6px black;
+    }
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .dish {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .dish img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+    .testimonials {
+      background-color: #e8f5e9;
+    }
+    footer {
+      background-color: #43a047;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    input, textarea {
+      padding: 10px;
+      width: 80%;
+      margin: 10px auto;
+      display: block;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+      text-align: center;
+      background-color: #f1f8e9;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .contact-info p {
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <h1>FlavorTown</h1>
+    <p>Eat Fresh. Live Better.</p>
+  </header>
+
+  <nav>
+    <a onclick="showSection('homeSection')">Home</a>
+    <a onclick="showSection('menuSection')">Menu</a>
+    <a onclick="showSection('testimonialsSection')">Testimonials</a>
+    <a onclick="showSection('contactSection')">Contact</a>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <div id="homeSection">
+    <div class="hero">
+      Welcome to FlavorTown!
+    </div>
+    <section>
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Email:</strong> contact@flavortown.in</p>
+        <p><strong>Address:</strong> 123 Food Street, Mumbai, Maharashtra, India</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- MENU SECTION -->
+  <section id="menuSection" class="hidden">
+    <h2>Today's Specials</h2>
+    <p>Discover our handpicked daily delights, made fresh with authentic spices and love. From crispy starters to hearty meals, we've got something for every craving.</p>
+    <div class="menu-grid">
+      <div class="dish">
+        <img src="https://cdn-icons-png.flaticon.com/512/3480/3480123.png" alt="Thali">
+        <h3>Veg Thali</h3>
+        <p>Rs. 120</p>
+      </div>
+      <div class="dish">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Samosa">
+        <h3>Samosa Plate</h3>
+        <p>Rs. 40</p>
+      </div>
+      <div class="dish">
+        <img src="https://cdn-icons-png.flaticon.com/512/5787/5787016.png" alt="Dosa">
+        <h3>Masala Dosa</h3>
+        <p>Rs. 70</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section id="testimonialsSection" class="testimonials hidden">
+    <h2>What Our Customers Say</h2>
+    <p>“Best food in town! Fresh, tasty and affordable.” – Priya R.</p>
+    <p>“Loved the dosa and thali combo. Will visit again!” – Aman S.</p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contactSection" class="hidden">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <input type="submit" value="Send Message" style="background-color:#2e7d32; color:white; cursor:pointer;" />
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 FlavorTown | Crafted with ❤️ in India
+  </footer>
+
+  <!-- JAVASCRIPT TO SWITCH SECTIONS -->
+  <script>
+    function showSection(idToShow) {
+      const sections = ['homeSection', 'menuSection', 'testimonialsSection', 'contactSection'];
+      sections.forEach(id => {
+        document.getElementById(id).classList.add('hidden');
+      });
+      document.getElementById(idToShow).classList.remove('hidden');
+    }
+
+    // Show home by default
+    showSection('homeSection');
+  </script>
+
+</body>
+</html>
